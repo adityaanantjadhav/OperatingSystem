@@ -1,4 +1,10 @@
 
+//This code takes available resources after allocation as input
+
+/*If want to convert it to program that takes input the total amount of each resources which is sum of allocated 
+resources of all processes and available resources then comment all the lines below ///////// till already commented
+and then uncomment the already commented code  */
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<unistd.h>
@@ -9,13 +15,9 @@ int main(){
 	
 	printf("enter the no. of resources::");
 	scanf("%d",&r);
-	int resource[r];
-	printf("enter the amount of resources::\n");
-	for(int i=0;i<r;i++){
-		printf("%d::",i+1);
-		scanf("%d",&resource[i]);
-	}
-	printf("enter the no. of processes::");
+	int resource[r];	
+    
+    printf("enter the no. of processes::");
 	scanf("%d",&n);
 	
 	int alloc[n][r],max[n][r], need[n][r],available[r],executed[n],route[n];
@@ -33,8 +35,19 @@ int main(){
 		 executed[i]=0;
 	}
 	
-	
-	
+
+    //////////////////////////////////////////////////////
+    printf("enter the available amount of resources::\n");
+	for(int i=0;i<r;i++){
+		printf("%d::",i+1);
+		scanf("%d",&available[i]);
+	}
+    /*
+	printf("enter the total amount of resources::\n");
+	for(int i=0;i<r;i++){
+		printf("%d::",i+1);
+		scanf("%d",&resource[i]);
+	}
 	for(int i=0;i<r;i++){
 		for(int j=0;j<n;j++){
 			if(j==0)
@@ -42,14 +55,13 @@ int main(){
 			else
 				available[i]+=alloc[j][i];
 		}
-	}
-	
-	
+	}	
 	printf("\navailable resources are:\n");
 	for(int i=0;i<r;i++){
 		available[i]=resource[i]-available[i];
 		printf("%d\t",available[i]);
 	}
+    */
 	
 	for(int i=0;i<n;i++){
 		for(int j=0;j<r;j++){
